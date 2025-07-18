@@ -65,7 +65,7 @@ class CepConsultor {
     }
 
     mostrarResultado(data) {
-        // Preencher os campos com os dados
+       
         document.getElementById('cepResult').textContent = data.cep;
         document.getElementById('logradouro').textContent = data.logradouro || 'Não informado';
         document.getElementById('bairro').textContent = data.bairro || 'Não informado';
@@ -73,10 +73,10 @@ class CepConsultor {
         document.getElementById('estado').textContent = data.uf;
         document.getElementById('ddd').textContent = data.ddd || 'Não informado';
 
-        // Mostrar o resultado
+      
         this.result.classList.remove('hidden');
         
-        // Scroll suave para o resultado
+       
         this.result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
@@ -97,18 +97,18 @@ class CepConsultor {
     }
 }
 
-// Inicializar a aplicação quando o DOM estiver carregado
+
 document.addEventListener('DOMContentLoaded', () => {
     new CepConsultor();
 });
 
-// Função para validar CEP (pode ser usada externamente)
+
 function validarCep(cep) {
     const cepLimpo = cep.replace(/\D/g, '');
     return cepLimpo.length === 8;
 }
 
-// Função para formatar CEP
+
 function formatarCep(cep) {
     const cepLimpo = cep.replace(/\D/g, '');
     if (cepLimpo.length === 8) {
